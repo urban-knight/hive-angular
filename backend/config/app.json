@@ -1,0 +1,11 @@
+{
+    "domain": "hive-studio.net",
+    "langs": ["en", "uk", "ru"],
+    "defaultLang": "en",
+    "langPath": "lang",
+    "langVar": "langer",
+    "langCookie": "lang",
+    "pages": ["about", "contacts", "order", "support"],
+    "indexes": ["services", "products", "projects"],
+    "indexTarget": "url"
+}

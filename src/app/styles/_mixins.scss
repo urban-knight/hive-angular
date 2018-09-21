@@ -1,0 +1,117 @@
+@mixin respond-to($media) {
+  @if $media == sm-screen {
+    @media only screen and (max-width: $break-small - 1) {
+      @content;
+    }
+  } @else if $media == md-screen {
+    @media only screen and (max-width: $break-medium - 1) {
+      @content;
+    }
+  } @else if $media == lg-screen {
+    @media only screen and (min-width: $break-large - 1) {
+      @content;
+    }
+  }
+}
+@mixin transform($transform) {
+  text-transform: $transform;
+}
+@mixin decoration($decoration) {
+  text-decoration: $decoration;
+}
+@mixin border($color) {
+  border-width: 1px;
+  border-style: solid;
+  border-color: $color;
+}
+@mixin transition($property, $duration, $ease) {
+  transition: $property $duration $ease;
+}
+@mixin btn-main($color, $bg, $hv-bg, $hv-color, $brd-color) {
+  color: $color;
+  background-color: $bg;
+  padding: 3px $padding;
+  margin: 0 $margin;
+  border: none;
+  font-weight: $thin;
+  @include border(transparent);
+  @include transition(all, 0.3s, ease-out);
+  &:hover {
+    padding: 3px 14px;
+    background-color: $hv-bg;
+    color: $hv-color;
+    border-color: $brd-color;
+    @include transition(all, 0.3s, ease-in);
+  }
+}
+@mixin btn-secondary($color, $bg, $hv-bg, $hv-color, $border, $hv-border) {
+  text-align: center;
+  padding: $padding - 5px;
+  color: $color !important;
+  background-color: $bg !important;
+  border: 2px solid $border;
+  @include transition(all, 0.3s, ease-out);
+  &:hover {
+    background-color: $hv-bg !important;
+    color: $hv-color !important;
+    @include transition(all, 0.3s, ease-in);
+    border: 1px solid $hv-border;
+  }
+}
+@mixin btn-secondary-bg($color, $bg, $hv-bg, $hv-color) {
+  text-align: center;
+  padding: $padding - 5px;
+  color: $color !important;
+  background-color: $bg !important;
+  padding: 5px 15px;
+  @include border(transparent);
+  @include transition(all, 0.3s, ease-out);
+  &:hover {
+    background-color: $hv-bg !important;
+    color: $hv-color !important;
+    @include transition(all, 0.3s, ease-in);
+  }
+}
+@mixin btn-main__border($color) {
+  border-left: 2px solid $color;
+  border-right: 2px solid $color;
+  height: 100% !important;
+  margin: 0 auto;
+  width: max-content;
+}
+@mixin button($size) {
+  font-size: $size;
+  margin: 0 $margin;
+  padding: $padding - 8px $padding;
+  border: none;
+  font-weight: $thin;
+  @include border(transparent);
+  @include transition(all, 0.5s, ease-out);
+  &:hover {
+    @include transition(all, 0.5s, ease-in);
+  }
+}
+@mixin button-color($bg, $color, $hv-bg, $hv-color) {
+  background-color: $bg;
+  color: $color;
+  @include border(transparent);
+  &:hover {
+    background-color: $hv-bg;
+    color: $hv-color;
+    @include border(transparent);
+  }
+}
+@mixin color-palette($bg, $color) {
+  background-color: $bg;
+  color: $color;
+}
+@mixin p-txt($weight) {
+  font-weight: $weight;
+}
+@mixin uni-title($font, $weight, $align, $top, $bot) {
+  font-size: $font;
+  font-weight: $weight;
+  text-align: $align;
+  padding-top: $top;
+  padding-bottom: $bot;
+}
