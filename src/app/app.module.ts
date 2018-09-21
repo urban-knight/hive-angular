@@ -3,18 +3,23 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import * as fromPages from './pages';
+// import * as fromServices from './services';
+import * as fromComponents from './components';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    ...fromPages.pages,
+    ...fromComponents.components,
   ],
   imports: [
     BrowserModule,
     RouterModule
   ],
-  providers: [],
+  providers: [
+    // ...fromServices.services,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
