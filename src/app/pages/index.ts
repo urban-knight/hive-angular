@@ -1,7 +1,7 @@
-import { NavbarComponent } from './../components/navbar/navbar.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 export const pages: any[] = [
-  NavbarComponent,
+  MainPageComponent,
 ];
 
-export * from './../components/navbar/navbar.component';
+export * from './main-page/main-page.component';

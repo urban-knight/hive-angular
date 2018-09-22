@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+
+import { MnFullpageModule } from 'ngx-fullpage';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 import * as fromPages from './pages';
@@ -15,11 +19,15 @@ import * as fromComponents from './components';
   ],
   imports: [
     BrowserModule,
-    RouterModule
+    RouterModule,
+    FlexLayoutModule,
+    MnFullpageModule.forRoot(),
+    MDBBootstrapModule.forRoot()
   ],
   providers: [
     // ...fromServices.services,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule { }

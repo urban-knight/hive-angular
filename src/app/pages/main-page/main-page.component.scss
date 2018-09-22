@@ -1,0 +1,13 @@
+@import "./../../../scss/variables";
+.fp__black,
+.fp__white {
+  text-align: center;
+}
+.fp__black {
+  background: $black;
+  color: $white !important;
+}
+.fp__white {
+  background: $white;
+  color: $black !important;
+}
