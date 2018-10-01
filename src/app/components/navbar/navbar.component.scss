@@ -1,0 +1,128 @@
+@import "../../../scss/variables";
+
+.navbar {
+  $navbar: &;
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+  border: none !important;
+  display: inline-block;
+  &__logo {
+    position: relative;
+    left: 3.125vw;
+    top: 4.16vh;
+  }
+  &__menu {
+    float: right;
+    list-style-type: none;
+    overflow: hidden;
+    padding-left: 7px;
+    margin-top: 4.8vh;
+    margin-right: 7.03vw;
+    &-elem {
+      float: left;
+      margin-right: 2.86vw;
+      .menu-link {
+        font-size: 1.85vh;
+        font-weight: 600;
+        text-transform: lowercase;
+        color: transparent;
+        #{$navbar}.light & {
+          color: $white;
+        }
+        #{$navbar}.dark & {
+          color: $black;
+        }
+        span {
+          position: relative;
+          display: block;
+          cursor: pointer;
+          transition: color 0.4s ease-in-out;
+          &:before {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 1px;
+            top: 50%;
+            left: -8px;
+            margin-top: 1px;
+            background: $focus;
+            transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+          }
+          &:after {
+            position: absolute;
+            width: 0%;
+            height: 1px;
+            top: 50%;
+            left: -8px;
+            margin-top: 1px;
+            background: $focus;
+            transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+          }
+          &:hover {
+            color: $focus;
+            &:before {
+              background: $focus;
+              width: calc(100% + 16px);
+              transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+            }
+            &:after {
+              background: transparent;
+              width: calc(100% + 16px);
+              transition: 0s;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__lang-switcher {
+    position: absolute;
+    top: 4.16vh;
+    right: 3.125vw;
+    height: 120px;
+    a {
+      display: block;
+      padding: 11px 7px;
+      line-height: 18px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .lang-trigger {
+      transition: all 0.6s ease-in-out;
+      background-color: transparent;
+      color: transparent;
+      #{$navbar}.light & {
+        color: $black;
+        background-color: $white;
+      }
+      #{$navbar}.dark & {
+        color: $white;
+        background-color: $black;
+      }
+    }
+    &:hover {
+      .lang-dropdown {
+        opacity: 1;
+      }
+    }
+    .lang-dropdown {
+      padding-top: 10px;
+      opacity: 0;
+      transition: all 0.5s ease-in-out;
+      a {
+        text-decoration: underline;
+        transition: all 0.5s ease-in-out;
+        #{$navbar}.light & {
+          color: $white;
+        }
+        #{$navbar}.dark & {
+          color: $black;
+        }
+      }
+    }
+  }
+}

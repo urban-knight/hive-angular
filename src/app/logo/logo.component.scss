@@ -1,0 +1,18 @@
+@import "../../scss/variables";
+.svg {
+  width: 6.67vw;
+  border: none !important;
+  .svg-paths {
+    transition: fill .5s ease-in-out;
+  }
+  &.dark {
+    .svg-paths {
+        fill: $black;
+    }
+  }
+  &.light {
+      .svg-paths {
+          fill: $white;
+      }
+  }
+}

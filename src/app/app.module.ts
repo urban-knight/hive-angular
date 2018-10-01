@@ -10,12 +10,14 @@ import { AppComponent } from './app.component';
 import * as fromPages from './pages';
 // import * as fromServices from './services';
 import * as fromComponents from './components';
+import { LogoComponent } from './logo/logo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ...fromPages.pages,
     ...fromComponents.components,
+    LogoComponent,
   ],
   imports: [
     BrowserModule,
