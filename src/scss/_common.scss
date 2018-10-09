@@ -2,15 +2,38 @@
 @import "./fonts";
 @import "./variables";
 
-body {
-  margin: 0 auto !important;
+html {
+  font-size: 20px;
+  line-height: 1.22;
+  font-weight: 500;
   font-family: $montserrat !important;
+  body {
+    font-family: $montserrat !important;
+  }
 }
 
+// fpJS Setup
 #fp-nav {
   top: 50% !important;
+  ul li {
+    a {
+      span {
+        width: 8px;
+        height: 8px;
+        background-color: $white;
+        border-radius: 50 !important;
+      }
+      &.active span {
+        width: 16px;
+        height: 16px;
+        background-color: $focus;
+      }
+    }
+  }
+  @include breakpoint($max: 767px) {
+    display: none;
+  }
 }
-
 .menu-wrapper {
   position: fixed;
   width: 100%;
@@ -441,15 +464,6 @@ p {
 }
 .btn__underline-common {
   border-bottom: 2px solid $white;
-}
-// fpJS Setup
-#fp-nav ul li a span,
-.fp-slidesNav ul li a span {
-  background-color: $white;
-}
-#fp-nav ul li a.active span,
-#fp-nav ul li a span {
-  border-radius: 0 !important;
 }
 .iScrollVerticalScrollbar,
 .iScrollLoneScrollbar {

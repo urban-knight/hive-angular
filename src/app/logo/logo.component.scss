@@ -1,18 +1,24 @@
 @import "../../scss/variables";
+@import "../../scss/mixins";
+
 .svg {
+  @include breakpoint($max: 767px) {
+    width: 19vw;
+    height: 5.8vh;
+  }
   width: 6.67vw;
   border: none !important;
   .svg-paths {
-    transition: fill .5s ease-in-out;
+    transition: fill 0.5s ease-in-out;
   }
   &.dark {
     .svg-paths {
-        fill: $black;
+      fill: $black;
     }
   }
   &.light {
-      .svg-paths {
-          fill: $white;
-      }
+    .svg-paths {
+      fill: $white;
+    }
   }
 }

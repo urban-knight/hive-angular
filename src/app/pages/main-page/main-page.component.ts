@@ -1,6 +1,6 @@
 import { Component, Output, Input, ViewChild } from '@angular/core';
 import { MnFullpageOptions, MnFullpageService } from 'ngx-fullpage';
-import { NavbarComponent } from '../../components/navbar/navbar.component';
+import { NavbarComponent } from '@app/components/navbar/navbar.component';
 
 @Component({
   selector: 'app-main-page',

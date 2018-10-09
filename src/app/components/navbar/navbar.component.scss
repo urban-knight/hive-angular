@@ -1,4 +1,16 @@
 @import "../../../scss/variables";
+@import "../../../scss/mixins";
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 .navbar {
   $navbar: &;
@@ -10,7 +22,13 @@
   box-shadow: none;
   border: none !important;
   display: inline-block;
+  background-color: #00000000;
+  transition: background-color 0.3s ease-in-out;
   &__logo {
+    @include breakpoint($max: 767px) {
+      left: 2.67vw;
+      top: 4.52vh;
+    }
     position: relative;
     left: 3.125vw;
     top: 4.16vh;
@@ -22,12 +40,16 @@
     padding-left: 7px;
     margin-top: 4.8vh;
     margin-right: 7.03vw;
+    @include breakpoint($min: 0, $max: 767px) {
+      display: none;
+    }
     &-elem {
       float: left;
       margin-right: 2.86vw;
       .menu-link {
-        font-size: 1.85vh;
+        font-size: 0.9rem;
         font-weight: 600;
+        letter-spacing: 0.5px;
         text-transform: lowercase;
         color: transparent;
         #{$navbar}.light & {
@@ -83,13 +105,26 @@
     position: absolute;
     top: 4.16vh;
     right: 3.125vw;
-    height: 120px;
+    width: 2rem;
+    @include breakpoint($max: 767px) {
+      top: 8.69vh;
+      right: 2.67vw;
+      height: 8vw;
+      width: 8vw;
+    }
     a {
       display: block;
-      padding: 11px 7px;
-      line-height: 18px;
-      font-size: 18px;
-      font-weight: 700;
+      text-align: center;
+      width: 100%;
+      height: 2rem;
+      line-height: 2rem;
+      font-weight: 600;
+      @include breakpoint($max: 767px) {
+        font-size: 0.6rem;
+        height: 1.5rem;
+        line-height: 1.5rem;
+        font-weight: 700;
+      }
     }
     .lang-trigger {
       transition: all 0.6s ease-in-out;
@@ -123,6 +158,104 @@
           color: $black;
         }
       }
+    }
+  }
+  &__mobile {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include breakpoint($min: 767px) {
+      display: none;
+    }
+    &__burger {
+      position: absolute;
+      top: 3vh;
+      right: 2.67vw;
+      .line {
+        display: block;
+        width: 5.33vw;
+        height: 2px;
+        margin-left: 2.67vw;
+        margin-bottom: 6px;
+        &:nth-child(1) {
+          width: 8vw;
+          margin-left: 0;
+        }
+        #{$navbar}.light & {
+          background-color: $white;
+        }
+        #{$navbar}.dark & {
+          background-color: $black;
+        }
+      }
+    }
+    &__menu {
+      display: none;
+      list-style-type: none;
+      overflow: hidden;
+      margin-left: 13.33vw;
+      // margin-top: -100%;
+      margin-top: 18.08vh;
+      transition: all 1s ease-in-out;
+      &-elem {
+        width: 100%;
+        margin-bottom: 4.52vh;
+        line-height: 1;
+        .menu-link {
+          font-size: 1.2rem;
+          font-weight: 700;
+          text-transform: lowercase;
+          color: $white;
+        }
+        :hover {
+          font-size: 1.5rem;
+          font-weight: 900;
+        }
+      }
+    }
+    &__social {
+      position: fixed;
+      left: 36.53vw;
+      bottom: -10vh;
+      transition: bottom 1s ease-in-out;
+      .social__link {
+        color: $white;
+        .social-icon {
+          height: 0.85rem;
+          width: 0.85rem;
+          margin-right: 7.73vw;
+          color: inherit;
+        }
+      }
+      :hover {
+        color: $focus;
+      }
+    }
+  }
+  &.open {
+    height: 100%;
+    background-color: $black;
+    .navbar__lang-switcher {
+      display: none;
+    }
+    .navbar__mobile__menu {
+      display: block;
+      animation: slide-in-top 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s
+        both;
+    }
+    .navbar__mobile__social {
+      display: block;
+      animation: slide-in-bottom 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s
+        both;
+      bottom: 3.6%;
+    }
+    .navbar__mobile__burger {
+      top: 3.62%;
+      right: 3.2vw;
+    }
+    & .svg-paths {
+      fill: $white !important;
     }
   }
 }
