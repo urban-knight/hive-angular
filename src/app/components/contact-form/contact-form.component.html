@@ -1,3 +1,25 @@
-<p>
-  contact-form works!
-</p>
+<form class="text-center" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="container">
+        <div class="col-md-12">
+            <input type="text" class="input__field" mdbInputDirective placeholder="Name">
+        </div>
+        <div class="col-md-12">
+            <input type="email" class="input__field" formControlName="contactFormEmail" mdbInputDirective placeholder="E-mail">
+        </div>
+        <div class="col-md-12">
+            <select formControlName="contactFormSubjects" class="input__field custom-select">
+                <option value="" disabled>Choose option</option>
+                <option value="1" selected>Feedback</option>
+                <option value="2">Report a bug</option>
+                <option value="3">Order</option>
+                <option value="4">Support</option>
+              </select>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <textarea formControlName="contactFormMessage" class="input__field" mdbInputDirective id="exampleFormControlTextarea2" rows="3" placeholder="Message"></textarea>
+            </div>
+        </div>
+        <button mdbBtn color="info" block="true" mdbWavesEffect type="submit" [disabled]="disabledSubmitButton">Send</button>
+    </div>
+</form>

@@ -34,6 +34,7 @@ export class MainPageComponent {
     this.initSectionColor = 'dark';
   }
 
+  // TODO: Replace anchors to real id's
   @Input() public opts: MnFullpageOptions = new MnFullpageOptions({
     controlArrows: false,
     scrollingSpeed: 100,

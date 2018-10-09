@@ -1,0 +1,25 @@
+//TODO: Remove all important injections
+.input__field {
+    background: none !important;
+    border: none !important;
+    border-bottom: 1px solid #ced4da;
+    margin: 10px 0;
+    width: 100%;
+    &:focus {
+        box-shadow: 0 1px 0 0 #4285f4;
+        border-bottom: 1px solid #4285f4;
+        outline: none;
+    }
+}
+
+.counter-danger {
+    border-right: 2px solid gold !important;
+    box-shadow: none !important;
+}
+
+.text-danger {
+    margin-top: -13px;
+    margin-left: -48px;
+    top: 13%;
+    color: gold !important;
+}
