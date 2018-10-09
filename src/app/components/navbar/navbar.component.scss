@@ -22,7 +22,6 @@
   box-shadow: none;
   border: none !important;
   display: inline-block;
-  background-color: #00000000;
   transition: background-color 0.3s ease-in-out;
   &__logo {
     @include breakpoint($max: 767px) {

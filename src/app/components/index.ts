@@ -25,6 +25,7 @@ export const components: any[] = [
 ];
 
 export * from './navbar/navbar.component';
+export * from '../logo/logo.component';
 export * from './buttons/buttons.component';
 export * from './vertical-selector/vertical-selector.component';
 export * from './info-card/info-card.component';
