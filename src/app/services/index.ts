@@ -1,5 +1,5 @@
-// import { ExampleService } from '@app/services/service1-example/service1-example.service';
+import { ConnectionService } from './contact.service';
 
-// export const services: any[] = [ExampleService];
+export const services: any[] = [ConnectionService];
 
-// export * from './service-example/service-example.service';
+export * from './contact.service';
