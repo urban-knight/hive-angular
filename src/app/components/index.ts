@@ -8,6 +8,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { ProductCarouselComponent } from './product-carousel/product-carousel.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { MainCtaComponent } from './main-cta/main-cta.component';
+import { LogoComponent } from '../logo/logo.component';
 
 export const components: any[] = [
   NavbarComponent,
@@ -20,9 +21,11 @@ export const components: any[] = [
   ProductCarouselComponent,
   AboutUsComponent,
   MainCtaComponent,
+  LogoComponent
 ];
 
 export * from './navbar/navbar.component';
+export * from '../logo/logo.component';
 export * from './buttons/buttons.component';
 export * from './vertical-selector/vertical-selector.component';
 export * from './info-card/info-card.component';
