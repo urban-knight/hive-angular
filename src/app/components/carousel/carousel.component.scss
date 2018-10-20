@@ -1,0 +1,119 @@
+@import "../../../scss/variables";
+.item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    padding: 0 12vw;
+    &__info {
+        z-index: 3;
+        width: 35%;
+        &-container {
+            display: flex;
+            flex-direction: column;
+            width: 25vw;
+            .item__info-block {
+                display: flex;
+                flex-direction: column;
+                width: 25vw;
+                margin: 20vh 0 0 5.25vw;
+                .title {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    background: $black;
+                    width: 24vw;
+                    &__head {
+                        text-align: left;
+                        font-size: 1.2rem;
+                        font-weight: bold;
+                        color: $white;
+                        margin: 0;
+                        display: block;
+                    }
+                    &__subhead {
+                        text-align: left;
+                        font-size: 0.8rem;
+                        font-weight: 300;
+                        color: $white;
+                        margin: 0;
+                        display: block;
+                    }
+                }
+            }
+            .item__subinfo-block {
+                display: flex;
+                flex-direction: row;
+                width: 40vw;
+                margin: 12vh 0 0 5.25vw;
+                .info {
+                    border: none;
+                    display: flex;
+                    background: #191715;
+                    padding: 15px 0;
+                    width: 20vw;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    &:first-child {
+                        display: flex;
+                        background: #191715;
+                        padding: 15px 0;
+                        width: 20vw;
+                        border-top: 1px solid white;
+                        border-left: 1px solid white;
+                        border-bottom: 1px solid white;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                    }
+                    &__item {
+                        &-head {
+                            font-size: 0.7rem;
+                            font-weight: 300;
+                            color: $white;
+                            display: block;
+                            padding: 5px 0 40px 0;
+                        }
+                        &-subhead {
+                            font-size: 0.8rem;
+                            font-weight: 500;
+                            color: $white;
+                            display: block;
+                            padding: 0 0 5px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__img {
+        width: 65%;
+        height: 70vh;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        &-screen {
+            position: relative;
+            height: 31vh;
+            z-index: 2;
+            margin: -35px 20px -35px -20px;
+        }
+        &-border {
+            position: relative;
+            border: 1px solid $white;
+            z-index: 0;
+            margin: -22vh 0;
+            padding: 0px 0 0px 0;
+            height: 50vh;
+        }
+    }
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    &__num {}
+}

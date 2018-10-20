@@ -1,10 +1,12 @@
+@import "../../../scss/variables";
 //TODO: Remove all important injections
 .input__field {
     background: none !important;
     border: none !important;
-    border-bottom: 1px solid #ced4da;
+    border-bottom: 1px solid #ced4da !important;
     margin: 10px 0;
     width: 100%;
+    font-size: 0.75rem !important;
     &:focus {
         box-shadow: 0 1px 0 0 #4285f4;
         border-bottom: 1px solid #4285f4;
@@ -22,4 +24,31 @@
     margin-left: -48px;
     top: 13%;
     color: gold !important;
+}
+
+.btn__white {
+    font-size: 0.75rem;
+    padding: 3px 17px;
+    color: $black;
+    font-weight: 500;
+    background: $white;
+    border: 1px solid $white;
+    border: none;
+    transition: 0.5s;
+    &:hover {
+        transition: 0.3s;
+        background: transparent;
+        border: 1px solid $white;
+        color: $white;
+    }
+}
+
+.custom-select {
+    display: inline-block;
+    width: 100%;
+    height: inherit;
+    padding: 0;
+    color: $white;
+    border: 1px solid $white;
+    border-radius: 0;
 }
