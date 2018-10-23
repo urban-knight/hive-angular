@@ -10,7 +10,7 @@
         "lint": "ng lint",
         "e2e": "ng e2e",
         "back": "nodemon --watch app.js --watch backend ./app.js",
-        "front": "ng serve --port 80"
+        "front": "ng serve --port 4200"
     },
     "private": true,
     "author": "Hive Studio",

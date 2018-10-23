@@ -3,7 +3,9 @@ const { promisifyAll } = require('bluebird');
 promisifyAll(mongoose);
 
 var uri = `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`;
-const options = {}
+const options = {
+  useNewUrlParser: true
+}
 
 mongoose.Promise = global.Promise;
 
