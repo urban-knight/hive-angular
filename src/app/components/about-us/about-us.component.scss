@@ -1,0 +1,95 @@
+
+.content{
+  margin-left: 14.53vw;
+}
+.dotted{
+  background-image: url('./../../../assets/dots.svg');
+  background-repeat: no-repeat;
+  width: 35.41vw;
+  height: 26.04vw;
+  
+}
+.text {
+  width: 31.25vw;
+  height: 20.83vw;
+  background-color: #fff;
+  position: relative;
+  line-height: 20.83vw;
+  top: 2.39vw;
+  left: 8.54vw;
+  font-size: 10.42vw;
+  font-weight: 400;
+  text-align: left;
+  font-family: 'Montserrat' !important;
+
+}
+span {
+  font-size: 5vw;
+}
+h2{
+  margin-left: 5.31vw;
+  text-align: left;
+  font-size: 3.75vw;
+  font-weight: 900;
+}
+h2 span{
+  font-weight: normal;
+}
+.dark-panel{
+  position: relative;
+  z-index: 3;
+ top: -13.45vw;
+  left: 31.88vw;
+  background-color: #191715;
+  color: #fff;
+  width: 29.17vw;
+  height: 10.42vw;
+}
+.dark-panel p{
+  padding: 1.56vw, 2.45vw, 6.41vw, 2.97vw;
+  font-size: 2.5 vw;
+  font-weight: bold;
+}
+.yellow-label{
+    top: 10.625vw;
+    position: absolute;
+    width: 7.5vw;
+    height: 0.52vw;
+    background-color: #FFBF00;
+    left: 14.48vw;
+}
+.dark-button{
+  width: 12.24vw;
+  height: 2.92vw;
+  background-color: #191715;
+  outline: none;
+  text-align: center;
+  font-size: 1.25vw;
+  border: none;
+  color: #fff;
+  font-weight: 900;
+  position: relative;
+  top: 11.1vw;
+  left: 8.4vw;
+}
+.dot {
+  vertical-align: middle;
+  height: 0.42vw;
+  width: 0.42vw;
+  margin-right: 0.7vw;
+  background-color: #FFFFF1;
+  border-radius: 50%;
+  display: inline-block;
+  &_active{
+    background-color: #FFBF00;
+    height: 0.83vw;
+    width: 0.83vw;
+  }
+}
+.slider_nav{
+  position: absolute;
+  right: 0;
+  top: 8vw;
+}
+
+
