@@ -1,7 +1,9 @@
 const middlewares = [
     require('./engines'),
+    require('./database'),
     require('./filesystem'),
     require('./cookie-session'),
+    require('./multer'),
     require('../routes'),
     require('./errors')
 ]
