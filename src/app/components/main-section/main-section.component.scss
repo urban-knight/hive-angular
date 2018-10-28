@@ -1,0 +1,133 @@
+@import "../../../scss/variables";
+.main {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 18vw;
+    &-title {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        font-weight: bold;
+        &__block {
+            background: $white;
+            color: $black;
+            padding: 9px 4.5rem 0 22vw;
+            margin-left: -23vw;
+            &--hive {
+                text-transform: uppercase;
+                font-size: 11.11vh;
+                font-weight: 600;
+            }
+        }
+        &__studio {
+            font-size: 11.11vh;
+            font-weight: bold;
+            margin-left: -17px;
+        }
+        &__motto {
+            font-size: 3.33vh;
+            margin-left: -14px;
+        }
+    }
+    &-start {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        &__motto {
+            font-size: 4.44vh;
+            font-weight: 700;
+            padding: 30px 0;
+        }
+        &__block {
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
+            &--btn {
+                padding: 3px 12px;
+                border: none;
+                background: $white;
+                font-weight: 700;
+                &--title {
+                    font-size: 2.5vh;
+                }
+                &--icon {
+                    padding: 0 0 0 7px;
+                    font-size: 2.5vh;
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    bottom: -20vh;
+    margin: 0 2vw;
+    position: relative;
+    &-social {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__info {
+            &--item {
+                font-size: 16px;
+                padding: 0 15px;
+                transition: 0.3s;
+                &:hover {
+                    color: $focus;
+                    font-size: 16px;
+                    transition: 0.3s;
+                }
+            }
+        }
+    }
+    &-navigation {
+        display: block;
+        border: 1px solid $white;
+        border-radius: 100%;
+        height: 94px;
+        width: 94px;
+        position: absolute;
+        left: 47%;
+        bottom: -26%;
+        &__inner {
+            display: flex;
+            flex-direction: column;
+            &--title {
+                font-size: 0.8rem;
+                position: absolute;
+                bottom: 53%;
+                left: 9%;
+            }
+            &--border {
+                display: block;
+                border-left: 5px solid $white;
+                height: 34px;
+                position: absolute;
+                left: 48%;
+                bottom: 1vh;
+                z-index: 0;
+            }
+            &--border--y {
+                display: block;
+                border-left: 5px solid $focus;
+                height: 24px;
+                position: absolute;
+                left: 48%;
+                bottom: 2vh;
+                z-index: 1;
+                animation: brd 1s infinite;
+            }
+        }
+    }
+    &-counter {
+        &__title {
+            font-weight: 600;
+            font-size: 18px;
+            .focused {
+                color: $focus;
+            }
+        }
+    }
+}
