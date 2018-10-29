@@ -3,23 +3,12 @@ import { ConnectionService } from '@app/services/contact.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, HostListener, OnInit } from '@angular/core';
 
-export interface Food {
-  value: string;
-  viewValue: string;
-}
-
 @Component({
   selector: 'app-contact-form',
   templateUrl: './contact-form.component.html',
   styleUrls: ['./contact-form.component.scss']
 })
 export class ContactFormComponent implements OnInit {
-
-  foods: Food[] = [
-    { value: 'steak-0', viewValue: 'Steak' },
-    { value: 'pizza-1', viewValue: 'Pizza' },
-    { value: 'tacos-2', viewValue: 'Tacos' }
-  ];
 
   public contactForm: FormGroup;
   public disabledSubmitButton = true;
