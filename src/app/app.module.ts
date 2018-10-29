@@ -49,7 +49,7 @@ import * as fromComponents from './components';
     MnFullpageModule.forRoot(),
     MDBBootstrapModule.forRoot(),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBHPjwO7A_ZCfsBeFIXkWTt26c8HJCNGQ0'
+      apiKey: 'AIzaSyAwbc49s90FxUmXbOwDmMs-mLGLdB_UIis'
     })
   ],
   providers: [

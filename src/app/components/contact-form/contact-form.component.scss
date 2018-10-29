@@ -1,54 +1,99 @@
 @import "../../../scss/variables";
-//TODO: Remove all important injections
-.input__field {
-    background: none !important;
-    border: none !important;
-    border-bottom: 1px solid #ced4da !important;
-    margin: 10px 0;
+.form {
     width: 100%;
-    font-size: 0.75rem !important;
-    &:focus {
-        box-shadow: 0 1px 0 0 #4285f4;
-        border-bottom: 1px solid #4285f4;
-        outline: none;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &-input {
+        position: relative;
+        margin-bottom: 35px;
+        &__field,
+        &__textarea,
+        &__select {
+            font-size: 18px;
+            padding: 0.425em 0.625em;
+            display: block;
+            width: 35vw;
+            border: none;
+            color: $white;
+            background: transparent;
+            border-bottom: 1px solid $white;
+            &:focus {
+                outline: none;
+            }
+            &:focus~label {
+                top: -20px;
+                left: 0.625em;
+                font-size: 14px;
+                color: $grey;
+            }
+            &:valid~label {
+                top: -20px;
+                left: 0.625em;
+                font-size: 14px;
+                color: $grey;
+            }
+        }
+        &__select {
+            &--item {
+                background: $black;
+            }
+        }
+        &__label {
+            color: $grey;
+            font-size: 18px;
+            font-weight: normal;
+            position: absolute;
+            pointer-events: none;
+            left: 0.625em;
+            top: 0.625em;
+            transition: 0.2s ease all;
+        }
+    }
+    &-buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        padding: 0 52px;
+        &__attach {
+            &--file {
+                display: none;
+            }
+            &--icon {
+                font-size: 32px;
+                background: #fffff1;
+                color: #191715;
+                padding: 0px 11px;
+                i {
+                    transform: rotate(90deg);
+                    transition: 0.3s;
+                    &:hover {
+                        transform: rotate(135deg);
+                        transition: 0.3s;
+                    }
+                }
+            }
+        }
+        &__submit {
+            padding: 10px 12px;
+            border: none;
+            background: $white;
+            font-weight: 700;
+            font-size: 18px;
+            &--icon {
+                padding: 0 0 0 7px;
+            }
+        }
     }
 }
 
-.counter-danger {
-    border-right: 2px solid gold !important;
-    box-shadow: none !important;
-}
-
-.text-danger {
-    margin-top: -13px;
-    margin-left: -48px;
-    top: 13%;
-    color: gold !important;
-}
-
-.btn__white {
-    font-size: 0.75rem;
-    padding: 3px 17px;
-    color: $black;
-    font-weight: 500;
-    background: $white;
-    border: 1px solid $white;
-    border: none;
-    transition: 0.5s;
-    &:hover {
-        transition: 0.3s;
-        background: transparent;
-        border: 1px solid $white;
-        color: $white;
-    }
-}
-
-.custom-select {
-    display: inline-block;
-    width: 100%;
-    height: inherit;
-    padding: 0;
-    color: $white;
-    border: 1px solid $white;
-    border-radius: 0;
+.form-alert {
+    font-size: 16px;
+    color: $focus;
+    text-align: left;
+    padding: 5px 0;
 }
