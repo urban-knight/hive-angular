@@ -87,30 +87,74 @@ tabset {
     padding: 1vh 0 !important;
 }
 
-.carousel-indicators {
-    right: 4vw !important;
-    bottom: 53vh !important;
-    display: flex;
-    justify-content: flex-end !important;
+.container__carousel {
+    .carousel-indicators {
+        right: 4vw !important;
+        bottom: 53vh !important;
+        display: flex;
+        justify-content: flex-end !important;
+    }
+    .carousel .carousel-indicators li {
+        width: 23px !important;
+        height: 2px !important;
+        border-radius: 0 !important;
+        cursor: pointer !important;
+        margin: 0 !important;
+    }
+    .carousel .carousel-control-prev-icon,
+    .carousel .carousel-control-next-icon {
+        width: 45px !important;
+        height: 45px !important;
+    }
+    .carousel__img {
+        height: 50vh;
+        width: 100%;
+    }
 }
 
-.carousel .carousel-indicators li {
-    width: 23px !important;
-    height: 2px !important;
-    border-radius: 0 !important;
-    cursor: pointer !important;
-    margin: 0 !important;
-}
-
-.carousel .carousel-control-prev-icon,
-.carousel .carousel-control-next-icon {
-    width: 45px !important;
-    height: 45px !important;
-}
-
-.carousel__img {
-    height: 50vh;
-    width: 100%;
+.container__products {
+    .carousel-indicators {
+        flex-direction: column;
+        bottom: -39px;
+    }
+    .carousel .carousel-indicators li {
+        width: 0.15rem !important;
+        height: 3.2rem !important;
+        border-radius: 0 !important;
+        cursor: pointer !important;
+        margin: 1rem 0 !important;
+    }
+    .carousel .carousel-control-prev-icon,
+    .carousel .carousel-control-next-icon {
+        width: 45px !important;
+        height: 45px !important;
+    }
+    .carousel__img {
+        height: 50vh;
+        width: 100%;
+    }
+    .carousel-indicators .active {
+        background-color: $black;
+    }
+    .carousel-indicators li {
+        background-color: $grey;
+    }
+    .carousel .carousel-control-prev-icon {
+        background: none;
+    }
+    .carousel .carousel-control-next-icon {
+        background: none;
+    }
+    .carousel-control-next {
+        right: inherit;
+        height: 30vh;
+        top: 30vh;
+    }
+    .carousel-control-prev {
+        height: 30vh;
+        position: absolute;
+        top: 0;
+    }
 }
 
 // fpJS Setup
