@@ -1,9 +1,10 @@
 @import "../../../scss/variables";
+@import "../../../scss/common";
 .footer {
     display: block;
     width: 100%;
-    margin: 9% 0;
-    padding: 0 8vw;
+    margin: 8vh 0;
+    padding: 3vh 8vw;
     &-gmap {
         display: flex;
         flex-direction: column;

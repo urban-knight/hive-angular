@@ -1,0 +1,31 @@
+// button redirect white
+.button-white {
+    padding: 3px 12px;
+    border: none;
+    background: $white;
+    color: $black;
+    font-weight: 700;
+    &__title {
+        font-size: 2.5vh;
+    }
+    &__icon {
+        padding: 0 0 0 7px;
+        font-size: 2.5vh;
+    }
+}
+
+// button redirect black
+.button-black {
+    padding: 3px 12px;
+    border: none;
+    background: $black;
+    color: $white;
+    font-weight: 700;
+    &__title {
+        font-size: 2.5vh;
+    }
+    &__icon {
+        padding: 0 0 0 7px;
+        font-size: 2.5vh;
+    }
+}
