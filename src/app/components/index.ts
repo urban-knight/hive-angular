@@ -10,6 +10,7 @@ import { TabsComponent } from './tabs/tabs.component';
 import { GoogleMapComponent } from './google-map/google-map.component';
 import { MainSectionComponent } from './main-section/main-section.component';
 import { DotsSvgComponent } from './dots-svg/dots-svg.component';
+import { MainTitleComponent } from './main-title/main-title.component';
 
 export const components: any[] = [
   NavbarComponent,
@@ -23,7 +24,8 @@ export const components: any[] = [
   TabsComponent,
   GoogleMapComponent,
   MainSectionComponent,
-  DotsSvgComponent
+  DotsSvgComponent,
+  MainTitleComponent
 ];
 
 export * from './navbar/navbar.component';
@@ -38,3 +40,4 @@ export * from './tabs/tabs.component';
 export * from './google-map/google-map.component';
 export * from './main-section/main-section.component';
 export * from './dots-svg/dots-svg.component';
+export * from './main-title/main-title.component';

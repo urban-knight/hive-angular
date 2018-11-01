@@ -1,9 +1,4 @@
-<div class="title">
-    <div class="title__line"></div>
-    <div class="title__block">
-        <h2 class="title__block-head">Our services</h2>
-    </div>
-</div>
+<app-main-title [title]="'Our products.'"></app-main-title>
 <div class="container__products">
     <!-- <div class="controls">
         <span class="controls__num">01</span>
@@ -19,7 +14,7 @@
     </div>
 
     <mdb-carousel [isControls]="true" [animation]="'fade'">
-        <mdb-carousel-item>
+        <mdb-carousel-item *ngFor="let item of entity">
             <div class="item">
                 <div class="item-info">
                     <div class="item-info__title">
@@ -34,111 +29,12 @@
                             </span>
                     </div>
                     <div class="item-info__button">
-                        <button class="item-info__button--btn" role="button">
-                                        <span class="item-info__button--btn--title">My project</span>
-                                        <span class="item-info__button--btn--icon">
-                                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                                        </span>
-                                    </button>
-                    </div>
-                </div>
-                <div class="item-price">
-                    <div class="item-price__value">
-                        from $650
-                    </div>
-                    <div class="item-price__svg">
-                        <app-dots-svg></app-dots-svg>
-                    </div>
-                </div>
-            </div>
-        </mdb-carousel-item>
-        <mdb-carousel-item>
-            <div class="item">
-                <div class="item-info">
-                    <div class="item-info__title">
-                        Catalogue
-                    </div>
-                    <div class="item-info__text">
-                        <span class="item-info__text--p">
-                                    The best tool for promoting goods or services on the Internet. By concentrating visitors from various advertising campaigns, the main purpose of the landing page is to inform the potential buyer about the product/service and encourage him to purchase it.   
-                                </span>
-                        <span class="item-info__text--p">
-                                     Our web studio applies the best solutions for website optimization, visitors monitoring and user data aggregation, so that determines the success of your sales. Hive Studio offers a truly effective tool for promotion of your goods on the Internet by turning visitors of advertising campaigns into buyers with the maximal conversion
-                                </span>
-                    </div>
-                    <div class="item-info__button">
-                        <button class="item-info__button--btn" role="button">
-                                            <span class="item-info__button--btn--title">My project</span>
-                                            <span class="item-info__button--btn--icon">
-                                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                                            </span>
-                                        </button>
-                    </div>
-                </div>
-                <div class="item-price">
-                    <div class="item-price__value">
-                        from $650
-                    </div>
-                    <div class="item-price__svg">
-                        <app-dots-svg></app-dots-svg>
-                    </div>
-                </div>
-            </div>
-        </mdb-carousel-item>
-        <mdb-carousel-item>
-            <div class="item">
-                <div class="item-info">
-                    <div class="item-info__title">
-                        Corporate
-                    </div>
-                    <div class="item-info__text">
-                        <span class="item-info__text--p">
-                                        The best tool for promoting goods or services on the Internet. By concentrating visitors from various advertising campaigns, the main purpose of the landing page is to inform the potential buyer about the product/service and encourage him to purchase it.   
+                        <button class="button-black" role="button">
+                                    <span class="button-black__title">Send request</span>
+                                    <span class="button-black__icon">
+                                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                                     </span>
-                        <span class="item-info__text--p">
-                                         Our web studio applies the best solutions for website optimization, visitors monitoring and user data aggregation, so that determines the success of your sales. Hive Studio offers a truly effective tool for promotion of your goods on the Internet by turning visitors of advertising campaigns into buyers with the maximal conversion
-                                    </span>
-                    </div>
-                    <div class="item-info__button">
-                        <button class="item-info__button--btn" role="button">
-                                                <span class="item-info__button--btn--title">My project</span>
-                                                <span class="item-info__button--btn--icon">
-                                                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                                                </span>
-                                            </button>
-                    </div>
-                </div>
-                <div class="item-price">
-                    <div class="item-price__value">
-                        from $650
-                    </div>
-                    <div class="item-price__svg">
-                        <app-dots-svg></app-dots-svg>
-                    </div>
-                </div>
-            </div>
-        </mdb-carousel-item>
-        <mdb-carousel-item>
-            <div class="item">
-                <div class="item-info">
-                    <div class="item-info__title">
-                        Store
-                    </div>
-                    <div class="item-info__text">
-                        <span class="item-info__text--p">
-                                            The best tool for promoting goods or services on the Internet. By concentrating visitors from various advertising campaigns, the main purpose of the landing page is to inform the potential buyer about the product/service and encourage him to purchase it.   
-                                        </span>
-                        <span class="item-info__text--p">
-                                             Our web studio applies the best solutions for website optimization, visitors monitoring and user data aggregation, so that determines the success of your sales. Hive Studio offers a truly effective tool for promotion of your goods on the Internet by turning visitors of advertising campaigns into buyers with the maximal conversion
-                                        </span>
-                    </div>
-                    <div class="item-info__button">
-                        <button class="item-info__button--btn" role="button">
-                                                    <span class="item-info__button--btn--title">My project</span>
-                                                    <span class="item-info__button--btn--icon">
-                                                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                                                    </span>
-                                                </button>
+                                </button>
                     </div>
                 </div>
                 <div class="item-price">
