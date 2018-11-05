@@ -10,6 +10,8 @@ export class NavbarComponent {
 
   private color: string;
   private lastColor: string;
+  activeLang: string;
+  langs: string[];
   isOpen: boolean;
 
   constructor() {
@@ -18,6 +20,15 @@ export class NavbarComponent {
 
   setColor(c) {
     this.color = c;
+  }
+  setActiveLang(l) {
+    this.activeLang = l;
+    const langs = ['en', 'ru', 'uk'];
+    const i = langs.indexOf(l);
+    if (i > -1) {
+      langs.splice(i, 1);
+    }
+    this.langs = langs;
   }
   setClasses() {
     const classes = {

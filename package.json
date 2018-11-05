@@ -27,6 +27,7 @@
         "@angular/platform-browser": "^6.1.8",
         "@angular/platform-browser-dynamic": "^6.1.8",
         "@angular/router": "^6.1.8",
+        "@ngstack/translate": "^1.1.0",
         "@types/chart.js": "^2.7.35",
         "angular-bootstrap-md": "^6.2.3",
         "angular5-csv": "^0.2.10",

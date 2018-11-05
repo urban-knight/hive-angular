@@ -1,5 +1,7 @@
-import { Component, Output, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Output, Input, ViewChild } from '@angular/core';
 import { MnFullpageOptions, MnFullpageService } from 'ngx-fullpage';
+import { ActivatedRoute } from '@angular/router';
+import { TranslateService, TitleService } from '@ngstack/translate';
 import { NavbarComponent } from '@app/components/navbar/navbar.component';
 
 @Component({
@@ -7,20 +9,30 @@ import { NavbarComponent } from '@app/components/navbar/navbar.component';
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss']
 })
-export class MainPageComponent {
+export class MainPageComponent implements OnInit {
+  constructor(
+    public fullpageService: MnFullpageService,
+    private route: ActivatedRoute,
+    private translate: TranslateService,
+    private titleService: TitleService
+  ) {
+    this.initSectionColor = 'dark';
+    translate.activeLangChanged.subscribe(
+      (event: { previousValue: string; currentValue: string }) => {
+        console.log(event.previousValue);
+        console.log(event.currentValue);
+      }
+    );
+  }
+    public lang: string;
+    public initSectionColor: string;
+  @ViewChild('navbar') private navbar: NavbarComponent;
 
-  public initSectionColor: string;
-
-  @ViewChild('navbar')
-  private navbar: NavbarComponent;
-
-  @Output()
-  public options: MnFullpageOptions = new MnFullpageOptions({
+  @Output() public options: MnFullpageOptions = new MnFullpageOptions({
     navigation: true,
     keyboardScrolling: true,
     onLeave: (index: number, nextIndex: number, direction: string): void => {
       let navbarColor = '';
-
       if (nextIndex % 2 === 0) {
         navbarColor = this.initSectionColor === 'dark' ? 'dark' : 'light';
       } else {
@@ -29,10 +41,6 @@ export class MainPageComponent {
       this.navbar.setColor(navbarColor);
     }
   });
-
-  constructor(public fullpageService: MnFullpageService) {
-    this.initSectionColor = 'dark';
-  }
 
   // TODO: Replace anchors to real id's
   @Input() public opts: MnFullpageOptions = new MnFullpageOptions({
@@ -45,5 +53,11 @@ export class MainPageComponent {
       'menuAnchor4', 'menuAnchor5', 'menuAnchor6'
     ]
   });
-
+  ngOnInit() {
+    this.route.data.subscribe((d) => {
+      this.translate.activeLang = d.lang;
+      this.navbar.setActiveLang(d.lang);
+      this.titleService.setTitle('main.title');
+    });
+  }
 }
