@@ -1,3 +1,76 @@
-<p>
-  contact-form works!
-</p>
+<!-- <form class="text-center" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="container">
+        <div class="col-md-12">
+            <input type="text" class="input__field" mdbInputDirective placeholder="Name">
+        </div>
+        <div class="col-md-12">
+            <input type="email" class="input__field" formControlName="contactFormEmail" mdbInputDirective placeholder="E-mail">
+        </div>
+        <div class="col-md-12">
+            <select formControlName="contactFormSubjects" class="input__field custom-select">
+                <option value="" disabled>Choose option</option>
+                <option value="1" selected>Feedback</option>
+                <option value="2">Report a bug</option>
+                <option value="3">Order</option>
+                <option value="4">Support</option>
+              </select>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <textarea formControlName="contactFormMessage" class="input__field" mdbInputDirective id="exampleFormControlTextarea2" rows="3" placeholder="Message"></textarea>
+            </div>
+        </div>
+        <button class="btn__white" block="true" mdbWavesEffect type="submit">Send</button>
+        <button class="btn__white" block="true" mdbWavesEffect type="submit" [disabled]="disabledSubmitButton">Send</button>
+    </div>
+</form> -->
+<form class="form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="form-input">
+        <input type="text" class="form-input__field" formControlName="contactFormName" required>
+        <label class="form-input__label">Name</label>
+        <div *ngIf="contactForm.controls.contactFormName.hasError('minLength')">
+            <div class="form-alert">Enter 2 symbols of your name or above</div>
+        </div>
+    </div>
+    <div class="form-input">
+        <input type="text" class="form-input__field" formControlName="contactFormEmail" required>
+        <label class="form-input__label">E-mail</label>
+        <div *ngIf="contactForm.controls.contactFormName.hasError('email')">
+            <div class="form-alert">Enter valid E-mail</div>
+        </div>
+    </div>
+    <div class="form-input">
+        <select type="text" class="form-input__select" formControlName="contactFormSubjects" required>
+            <option class="form-input__select--item" value="1" selected>Feedback</option>
+            <option class="form-input__select--item" value="2">Report a bug</option>
+            <option class="form-input__select--item" value="3">Order</option>
+            <option class="form-input__select--item" value="4">Support</option>
+        </select>
+        <label class="form-input__label">Choose service</label>
+    </div>
+    <div class="form-input">
+        <textarea type="text" class="form-input__textarea" formControlName="contactFormMessage" required></textarea>
+        <label class="form-input__label">Message</label>
+        <div *ngIf="contactForm.controls.contactFormMessage.hasError('minLength')">
+            <div class="form-alert">This field must contain valid value</div>
+        </div>
+    </div>
+    <div class="form-buttons">
+        <div class="form-buttons__attach">
+            <label>
+                <div class="form-buttons__attach--icon">
+                    <i class="fa fa-paperclip" aria-hidden="true"></i>
+                </div>
+                <input type="file" class="form-buttons__attach--file">
+            </label>
+        </div>
+        <div class="form-buttons__submit">
+            <button class="button-white" role="button">
+                        <span class="button-white__title">Send request</span>
+                        <span class="button-white__icon">
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </span>
+                    </button>
+        </div>
+    </div>
+</form>

@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductCarouselComponent implements OnInit {
 
+  data;
+  project: string;
+  entity: any[];
+
   constructor() { }
 
   ngOnInit() {
+    this.entity = Array(4);
   }
-
 }

@@ -1,0 +1,42 @@
+@import "../../../scss/variables";
+@import "../../../scss/common";
+.tabs {
+    display: flex;
+    &-title {
+        position: absolute;
+        font-size: 1.82vh;
+        width: 18.4vw;
+        height: 28.69vh;
+        left: 51%;
+        z-index: 2;
+        background: #191715;
+        padding: 1vh 2vw 1vh 1vw;
+        top: 40%;
+        text-align: initial;
+    }
+    &-img {
+        position: relative;
+        z-index: 1;
+        left: 10vw;
+        top: -0.5vh;
+        &__item {
+            height: 34.38vh;
+            width: 18.75vw;
+        }
+    }
+    &-border {
+        border: 1px solid;
+        height: 34.38vh;
+        width: 18.75vw;
+        position: absolute;
+        right: 16vw;
+        top: 42vh;
+        z-index: 0;
+    }
+}
+
+.tab-chevron {
+    position: absolute;
+    top: 43%;
+    left: 45%;
+}

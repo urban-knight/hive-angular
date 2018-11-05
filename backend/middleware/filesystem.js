@@ -1,9 +1,8 @@
 module.exports = {
     apply(app) {
-        const fs = require('fs');
+        const path = require('path');
         const express = require('express');
-
-        app.use('/static', express.static(appRoot + "/public"));
-        app.use('/', express.static(appRoot + "/files"));
+        app.use('/static', express.static(path.join(appRoot, 'public')));
+        app.use('/', express.static(path.join(appRoot, 'dist')));
     }
 };

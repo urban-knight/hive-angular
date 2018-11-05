@@ -1,0 +1,96 @@
+@import "../../../scss/variables";
+.form {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &-input {
+        position: relative;
+        margin-bottom: 35px;
+        &__field,
+        &__textarea,
+        &__select {
+            font-size: 18px;
+            padding: 0.425em 0.625em;
+            display: block;
+            width: 35vw;
+            border: none;
+            color: $white;
+            background: transparent;
+            border-bottom: 1px solid $white;
+            &:focus {
+                outline: none;
+            }
+            &:focus~label {
+                top: -20px;
+                left: 0.625em;
+                font-size: 14px;
+                color: $grey;
+            }
+            &:valid~label {
+                top: -20px;
+                left: 0.625em;
+                font-size: 14px;
+                color: $grey;
+            }
+        }
+        &__select {
+            &--item {
+                background: $black;
+            }
+        }
+        &__label {
+            color: $grey;
+            font-size: 18px;
+            font-weight: normal;
+            position: absolute;
+            pointer-events: none;
+            left: 0.625em;
+            top: 0.625em;
+            transition: 0.2s ease all;
+        }
+    }
+    &-buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        padding: 0 52px;
+        &__attach {
+            &--file {
+                display: none;
+            }
+            &--icon {
+                font-size: 32px;
+                background: #fffff1;
+                color: #191715;
+                padding: 0px 11px;
+                i {
+                    transform: rotate(90deg);
+                    transition: 0.3s;
+                    &:hover {
+                        transform: rotate(135deg);
+                        transition: 0.3s;
+                    }
+                }
+            }
+        }
+        &__submit {
+            padding: 10px 12px;
+            border: none;
+            background: $white;
+            font-weight: 700;
+            font-size: 18px;
+        }
+    }
+}
+
+.form-alert {
+    font-size: 16px;
+    color: $focus;
+    text-align: left;
+    padding: 5px 0;
+}
