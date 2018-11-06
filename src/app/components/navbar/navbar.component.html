@@ -37,7 +37,7 @@
   <div class="navbar__lang-switcher">
     <a class="lang-trigger">{{ activeLang }}</a>
     <div class="lang-dropdown">
-      <a *ngFor="let lang of langs" href="/{{ lang == 'en' ? '' : lang }}">{{ lang }}</a>
+      <a *ngFor="let lang of langs" [routerLink]="[lang == 'en' ? '' : '/' + lang ]">{{ lang }}</a>
     </div>
   </div>
   <div class="navbar__mobile">

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Output, Input, ViewChild, OnDestroy } from '@angular/core';
 import { MnFullpageOptions, MnFullpageService } from 'ngx-fullpage';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateService, TitleService } from '@ngstack/translate';
@@ -9,7 +9,7 @@ import { NavbarComponent } from '@app/components/navbar/navbar.component';
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss']
 })
-export class MainPageComponent implements OnInit {
+export class MainPageComponent implements OnInit, OnDestroy {
   constructor(
     public fullpageService: MnFullpageService,
     private route: ActivatedRoute,
@@ -17,12 +17,6 @@ export class MainPageComponent implements OnInit {
     private titleService: TitleService
   ) {
     this.initSectionColor = 'dark';
-    translate.activeLangChanged.subscribe(
-      (event: { previousValue: string; currentValue: string }) => {
-        console.log(event.previousValue);
-        console.log(event.currentValue);
-      }
-    );
   }
     public lang: string;
     public initSectionColor: string;
@@ -53,11 +47,16 @@ export class MainPageComponent implements OnInit {
       'menuAnchor4', 'menuAnchor5', 'menuAnchor6'
     ]
   });
+
   ngOnInit() {
     this.route.data.subscribe((d) => {
       this.translate.activeLang = d.lang;
       this.navbar.setActiveLang(d.lang);
       this.titleService.setTitle('main.title');
     });
+  }
+
+  ngOnDestroy(): void {
+    this.fullpageService.destroy('all');
   }
 }
