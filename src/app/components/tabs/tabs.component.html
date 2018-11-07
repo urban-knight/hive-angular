@@ -4,11 +4,11 @@
 <tabset [vertical]="true" type="pills">
     <tab *ngFor="let service of services">
         <ng-template tabHeading>
-            <span>{{ service.en.name }}</span>
+            <span>{{ service.name }}</span>
         </ng-template>
         <div class="tabs">
             <div class="tabs-title">
-                {{ service.en.desc }}
+                {{ service.desc }}
             </div>
             <div class="tabs-img">
                 <img class="tabs-img__item" src="https://mdbootstrap.com/img/Photos/Slides/img%20(130).jpg">

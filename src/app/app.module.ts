@@ -17,6 +17,7 @@ import {
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule, TranslateService } from '@ngstack/translate';
 import { AppRoutingModule } from './app.routing';
@@ -51,6 +52,7 @@ export function setupTranslateService(service: TranslateService) {
     InputsModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpModule,
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
     TabsModule.forRoot(),

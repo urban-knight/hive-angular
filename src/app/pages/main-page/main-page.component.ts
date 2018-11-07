@@ -10,14 +10,16 @@ import { NavbarComponent } from '@app/components/navbar/navbar.component';
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit, OnDestroy {
+
   constructor(
     public fullpageService: MnFullpageService,
-    private route: ActivatedRoute,
-    private translate: TranslateService,
-    private titleService: TitleService
+    private _route: ActivatedRoute,
+    private _translate: TranslateService,
+    private _titleService: TitleService
   ) {
     this.initSectionColor = 'dark';
   }
+
     public lang: string;
     public initSectionColor: string;
   @ViewChild('navbar') private navbar: NavbarComponent;
@@ -49,10 +51,10 @@ export class MainPageComponent implements OnInit, OnDestroy {
   });
 
   ngOnInit() {
-    this.route.data.subscribe((d) => {
-      this.translate.activeLang = d.lang;
+    this._route.data.subscribe((d) => {
+      this._translate.activeLang = d.lang;
       this.navbar.setActiveLang(d.lang);
-      this.titleService.setTitle('main.title');
+      this._titleService.setTitle('main.title');
     });
   }
 
