@@ -5,40 +5,39 @@
   <ul class="navbar__menu">
     <li class="navbar__menu-elem" data-menuanchor="about">
       <a class="menu-link" href="#about">
-        <span class="strike">About</span>
+        <span class="strike">{{"navbar.about" | translate }}</span>
       </a>
     </li>
     <li class="navbar__menu-elem" data-menuanchor='services'>
       <a class="menu-link" href="#services">
-        <span class="strike">Services</span>
+        <span class="strike">{{"navbar.services" | translate }}</span>
       </a>
     </li>
     <li class="navbar__menu-elem" data-menuanchor='products'>
       <a class="menu-link" href="#products">
-        <span class="strike">Products</span>
+        <span class="strike">{{"navbar.products" | translate }}</span>
       </a>
     </li>
     <li class="navbar__menu-elem" data-menuanchor='portfolio'>
       <a class="menu-link" href="#portfolio">
-        <span class="strike">Portfolio</span>
+        <span class="strike">{{"navbar.portfolio" | translate }}</span>
       </a>
     </li>
     <li class="navbar__menu-elem" data-menuanchor='blog'>
       <a class="menu-link" href="#blog">
-        <span class="strike">Blog</span>
+        <span class="strike">{{"navbar.blog" | translate }}</span>
       </a>
     </li>
     <li class="navbar__menu-elem" data-menuanchor='contacts'>
       <a class="menu-link" href="#contacts">
-        <span class="strike">Contacts</span>
+        <span class="strike">{{"navbar.contacts" | translate }}</span>
       </a>
     </li>
   </ul>
   <div class="navbar__lang-switcher">
-    <a class="lang-trigger">EN</a>
+    <a class="lang-trigger">{{ activeLang }}</a>
     <div class="lang-dropdown">
-      <a href="https://hive-studio.net/uk">UK</a>
-      <a href="https://hive-studio.net/ru">RU</a>
+      <a *ngFor="let lang of langs" [routerLink]="[lang == 'en' ? '' : '/' + lang ]">{{ lang }}</a>
     </div>
   </div>
   <div class="navbar__mobile">
@@ -49,22 +48,22 @@
     </div>
     <ul class="navbar__mobile__menu">
       <li class="navbar__mobile__menu-elem" data-menuanchor="about">
-        <a class="menu-link" href="#about">About</a>
+        <a class="menu-link" href="#about">{{"navbar.about" | translate }}</a>
       </li>
       <li class="navbar__mobile__menu-elem" data-menuanchor='services'>
-        <a class="menu-link" href="#services">Services</a>
+        <a class="menu-link" href="#services">{{"navbar.services" | translate }}</a>
       </li>
       <li class="navbar__mobile__menu-elem" data-menuanchor='products'>
-        <a class="menu-link" href="#products">Products</a>
+        <a class="menu-link" href="#products">{{"navbar.products" | translate }}</a>
       </li>
       <li class="navbar__mobile__menu-elem" data-menuanchor='portfolio'>
-        <a class="menu-link" href="#portfolio">Portfolio</a>
+        <a class="menu-link" href="#portfolio">{{"navbar.portfolio" | translate }}</a>
       </li>
       <li class="navbar__mobile__menu-elem" data-menuanchor='blog'>
-        <a class="menu-link" href="#blog">Blog</a>
+        <a class="menu-link" href="#blog">{{"navbar.blog" | translate }}</a>
       </li>
       <li class="navbar__mobile__menu-elem" data-menuanchor='contacts'>
-        <a class="menu-link" href="#contacts">Contacts</a>
+        <a class="menu-link" href="#contacts">{{"navbar.contacts" | translate }}</a>
       </li>
     </ul>
     <div class="navbar__mobile__social">
