@@ -1,45 +1,44 @@
 @import "../../../scss/variables";
 @import "../../../scss/fonts";
-
-.cta_container{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  &__col-50{
-    width: 50%;
-  }
-  &__download{
-    background-image: url('./../../../assets/dots-presentation.svg');
-    width : 35.47vw;
-    height: 26.04vw;
-  }
-  &__button{
-    width: 18.75vw;
-    height: 3.65vw;
-    background-color: #FFBF00;
-    outline: none;
-    text-align: center;
-    font-size: 1.25vw;
-    border: none;
-    margin-top: 10.94vw;
-    font-weight: 900;
-  }
-  &__text{
-    font-size: 3.75vw;
-    width: 35.20vw;
-    line-height: 4.58vw;
-    height: 13.75vw;
-    margin-left: 13.39vw;
-    font-weight: 900;
-    text-align: left;
-  }
-  &__yellow-label{
-    top: 19.4vw;
-    position: absolute;
-    width: 7.5vw;
-    height: 0.52vw;
-    background-color: #FFBF00;
-    left: 7.9vw;
-  }
+.cta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    &-item {
+        width: 50%;
+        &__download {
+            background-image: url('./../../../assets/dots.svg');
+            width: 35.47vw;
+            height: 26.04vw;
+            &--btn {
+                width: 18.75vw;
+                height: 3.65vw;
+                background-color: $focus;
+                outline: none;
+                text-align: center;
+                font-size: 1.25vw;
+                border: none;
+                margin-top: 10.94vw;
+                font-weight: 900;
+            }
+        }
+        &__title {
+            font-size: 3.75vw;
+            width: 35.20vw;
+            line-height: 4.58vw;
+            height: 13.75vw;
+            margin-left: 13.39vw;
+            font-weight: 900;
+            text-align: left;
+        }
+        &__label {
+            top: 19.4vw;
+            position: absolute;
+            width: 7.5vw;
+            height: 0.52vw;
+            background-color: $focus;
+            left: 7.9vw;
+        }
+    }
 }

@@ -1,0 +1,71 @@
+@import "../../../scss/variables";
+@import "../../../scss/buttons";
+.about {
+    &-dotted {
+        margin-top: 5vw;
+        margin-left: 11.18vw;
+        background-image: url('./../../../assets/dots.svg');
+        background-repeat: no-repeat;
+        width: 35.41vw;
+        height: 26.04vw;
+        &__title {
+            width: 31.25vw;
+            height: 20.83vw;
+            background-color: $white;
+            position: relative;
+            line-height: 20.83vw;
+            top: 2.39vw;
+            left: 8.54vw;
+            font-size: 10.42vw;
+            font-weight: 400;
+            text-align: left;
+            &>span {
+                font-size: 5vw;
+            }
+        }
+    }
+    &-btn {
+        text-align: right;
+        bottom: -8.2vw;
+        position: absolute;
+        right: 0;
+    }
+    &-panel {
+        position: relative;
+        top: -13.45vw;
+        left: 31.88vw;
+        background-color: $black;
+        color: $white;
+        width: 29.17vw;
+        height: 10.42vw;
+        & p {
+            padding: 1.56vw, 2.45vw, 6.41vw, 2.97vw;
+            font-size: 2.5vw;
+            font-weight: bold;
+        }
+        &__slider {
+            float: right;
+            top: 1.85vw;
+            position: relative;
+            &--dot {
+                vertical-align: middle;
+                height: 0.42vw;
+                width: 0.42vw;
+                margin-right: 0.7vw;
+                background-color: $white;
+                border-radius: 50%;
+                display: inline-block;
+            }
+            .active {
+                background-color: $focus;
+                height: 0.83vw;
+                width: 0.83vw;
+            }
+            .slider_nav {
+                position: absolute;
+                right: 0;
+                top: 8vw;
+            }
+        }
+    }
+}
