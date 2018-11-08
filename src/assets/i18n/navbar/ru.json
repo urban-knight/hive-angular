@@ -1,0 +1,10 @@
+{
+    "navbar": {
+        "about": "о нас",
+        "services": "услуги",
+        "products": "продукты",
+        "portfolio": "портфолио",
+        "blog": "блог",
+        "contacts": "контакты"
+    }
+}
