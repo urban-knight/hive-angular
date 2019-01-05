@@ -27,6 +27,7 @@ import { AppComponent } from './app.component';
 import * as fromPages from './pages';
 import * as fromServices from './services';
 import * as fromComponents from './components';
+import { MainSectionComponent } from './components';
 // import * as fromPipes from './pipes';
 // import * as fromDirectives from './directives';
 
@@ -82,6 +83,9 @@ export function setupTranslateService(service: TranslateService) {
     }
   ],
   bootstrap: [AppComponent],
-  schemas: [NO_ERRORS_SCHEMA]
+  schemas: [NO_ERRORS_SCHEMA],
+  exports: [
+    ...fromComponents.components
+  ]
 })
 export class AppModule { }

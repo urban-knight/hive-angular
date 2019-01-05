@@ -2,159 +2,162 @@
 @import "../../../scss/fonts";
 
 .intro-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    background: #191715;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: #191715;
+  width: 100%;
+  height: 100%;
 }
 
 .main {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 14.48vw;
+  &-title {
     display: flex;
-    justify-content: space-between;
-    margin: 0 14.48vw;
-    &-title {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        font-weight: bold;
-        &__block {
-            height: 6.88rem;
-            padding: 0rem 8.9rem 0 13.94rem;
-            margin-left: -15.44rem;
-            margin-bottom: 0.5rem;
-            background: $white;
-            color: $black;
-            &--hive {
-                height: 6.88rem;
-                margin-top: -0.89rem;
-                font-size: 7.15rem;
-                font-family: $hivefont;
-                font-weight: normal;
-                font-style: normal;
-                text-transform: uppercase;
-                margin-bottom: 0;
-            }
-        }
-        &__studio {
-            font-size: 6.67rem;
-            line-height: 7.33rem;
-            font-weight: bolder;
-            margin-left: -17px;
-        }
-        &__motto {
-            font-size: 2rem;
-            margin-left: -14px;
-        }
+    flex-direction: column;
+    align-items: start;
+    font-weight: bold;
+    &__block {
+      height: 6.88rem;
+      padding: 0rem 8.9rem 0 13.94rem;
+      margin-left: -15.44rem;
+      margin-bottom: 0.5rem;
+      background: $white;
+      color: $black;
+      &--hive {
+        height: 6.88rem;
+        margin-top: -0.89rem;
+        font-size: 7.15rem;
+        font-family: $hivefont;
+        font-weight: normal;
+        font-style: normal;
+        text-transform: uppercase;
+        margin-bottom: 0;
+      }
     }
-    &-start {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        &__motto {
-            font-size: 2.67rem;
-            font-weight: 700;
-            padding-bottom: 2.22rem;
-        }
-        &__block {
-            display: flex;
-            width: 100%;
-            justify-content: flex-end;
-            .button-white {
-                min-height: 3.11rem;
-                min-width: 11.11rem;
-                padding: 0;
-                &__title {
-                    float: left;
-                    padding-left: 1rem;
-                    font-size: 1rem;
-                    line-height: 3.11rem;
-                }
-                &__icon--svg {
-                    float: right;
-                    height: 3.11rem;
-                    width: 3rem;
-                    padding-right: 1rem;
-                }
-            }
-        }
+    &__studio {
+      font-size: 6.67rem;
+      line-height: 7.33rem;
+      font-weight: bolder;
+      margin-left: -17px;
     }
+    &__motto {
+      font-size: 2rem;
+      margin-left: -14px;
+    }
+  }
+  &-start {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    &__motto {
+      font-size: 2.67rem;
+      font-weight: 700;
+      padding-bottom: 2.22rem;
+    }
+    &__block {
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+      .button-white {
+        &:hover {
+          color: $black;
+        }
+        min-height: 3.11rem;
+        min-width: 11.11rem;
+        padding: 0;
+        &__title {
+          float: left;
+          padding-left: 1rem;
+          font-size: 1rem;
+          line-height: 3.11rem;
+        }
+        &__icon--svg {
+          float: right;
+          height: 3.11rem;
+          width: 3rem;
+          padding-right: 1rem;
+        }
+      }
+    }
+  }
 }
 
 .footer {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  bottom: -20vh;
+  margin: 0 2vw;
+  &-social {
     display: flex;
     justify-content: space-between;
-    bottom: -20vh;
-    margin: 0 2vw;
-    &-social {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        &__info {
-            &--item {
-                font-size: 16px;
-                padding: 0 15px;
-                transition: 0.3s;
-                &:hover {
-                    color: $focus;
-                    font-size: 16px;
-                    transition: 0.3s;
-                }
-            }
+    align-items: center;
+    &__link {
+      font-size: 1rem;
+      padding: 0 15px;
+      &--icon {
+        color: $white;
+        &:hover {
+          color: $focus;
+          transition: 0.3s;
         }
+      }
     }
-    &-navigation {
-        display: block;
-        border: 1px solid $white;
-        border-radius: 100%;
-        height: 94px;
-        width: 94px;
+  }
+  &-navigation {
+    display: block;
+    border: 1px solid $white;
+    border-radius: 100%;
+    height: 94px;
+    width: 94px;
+    position: absolute;
+    left: 47%;
+    bottom: -26%;
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      &--title {
+        font-size: 0.8rem;
         position: absolute;
-        left: 47%;
-        bottom: -26%;
-        &__inner {
-            display: flex;
-            flex-direction: column;
-            &--title {
-                font-size: 0.8rem;
-                position: absolute;
-                bottom: 53%;
-                left: 9%;
-            }
-            &--border {
-                display: block;
-                border-left: 5px solid $white;
-                height: 34px;
-                position: absolute;
-                left: 48%;
-                bottom: 1vh;
-                z-index: 0;
-            }
-            &--border--y {
-                display: block;
-                border-left: 5px solid $focus;
-                height: 24px;
-                position: absolute;
-                left: 48%;
-                bottom: 2vh;
-                z-index: 1;
-                animation: brd 1s infinite;
-            }
-        }
+        bottom: 53%;
+        left: 9%;
+      }
+      &--border {
+        display: block;
+        border-left: 5px solid $white;
+        height: 34px;
+        position: absolute;
+        left: 48%;
+        bottom: 1vh;
+        z-index: 0;
+      }
+      &--border--y {
+        display: block;
+        border-left: 5px solid $focus;
+        height: 24px;
+        position: absolute;
+        left: 48%;
+        bottom: 2vh;
+        z-index: 1;
+        animation: brd 1s infinite;
+      }
     }
-    &-counter {
-        &__title {
-            font-weight: 600;
-            font-size: 18px;
-            .focused {
-                color: $focus;
-            }
-        }
+  }
+  &-counter {
+    &__title {
+      font-weight: 700;
+      font-size: 1rem;
+      &--focused {
+        font-size: 1.23rem;
+        color: $focus;
+      }
     }
+  }
 }

@@ -4,7 +4,7 @@
         "services": "services",
         "products": "products",
         "portfolio": "portfolio",
-        "blog": "blog",
+        "order": "order",
         "contacts": "contacts"
     }
 }

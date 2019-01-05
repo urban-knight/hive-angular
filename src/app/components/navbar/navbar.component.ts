@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -16,7 +16,15 @@ export class NavbarComponent {
 
   constructor() {
     this.color = 'light';
-   }
+  }
+
+  @Output()
+  navClick = new EventEmitter<String>();
+
+  nav(event: Event, anchor: string) {
+    console.log('child anchor: ' + anchor);
+    this.navClick.emit(anchor);
+  }
 
   setColor(c) {
     this.color = c;

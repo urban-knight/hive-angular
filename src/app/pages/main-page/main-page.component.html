@@ -1,24 +1,31 @@
-<app-navbar #navbar></app-navbar>
-<div id="content-wrapper" [mnFullpage]="options" [mnFullpageNavigation]="true" [mnFullpageKeyboardScrolling]="true" [mnFullpageSlidesNavigation]="true" mnFullpageSlidesNavPosition="right">
-    <div id="menuAnchor1" class="section fp__black">
-        <app-main-section></app-main-section>
-    </div>
-    <div id="menuAnchor2" class="section fp__white">
-        <app-about-us></app-about-us>
-    </div>
-    <div id="menuAnchor3" class="section fp__black">
-        <app-tabs></app-tabs>
-    </div>
-    <div black id="menuAnchor4" class="section fp__white">
-        <app-product-carousel></app-product-carousel>
-    </div>
-    <div id="menuAnchor5" class="section fp__black">
-        <app-carousel></app-carousel>
-    </div>
-    <div id="menuAnchor6" class="section fp__white">
-        <app-main-cta></app-main-cta>
-    </div>
-    <div id="menuAnchor7" class="section fp__black">
-        <app-footer></app-footer>
-    </div>
+<app-navbar #navbar (navClick)="navigate($event)"></app-navbar>
+<div
+  id="content-wrapper"
+  [mnFullpage]="options"
+  [mnFullpageNavigation]="true"
+  [mnFullpageKeyboardScrolling]="true"
+  [mnFullpageSlidesNavigation]="true"
+  mnFullpageSlidesNavPosition="right"
+>
+  <div class="section fp__black" data-anchor="intro">
+    <app-main-section></app-main-section>
+  </div>
+  <div class="section fp__white" data-anchor="about">
+    <app-about-us></app-about-us>
+  </div>
+  <div class="section fp__black" data-anchor="services">
+    <app-tabs></app-tabs>
+  </div>
+  <div class="section fp__white" data-anchor="products">
+    <app-product-carousel></app-product-carousel>
+  </div>
+  <div class="section fp__black" data-anchor="portfolio">
+    <app-carousel></app-carousel>
+  </div>
+  <div class="section fp__white" data-anchor="order">
+    <app-main-cta></app-main-cta>
+  </div>
+  <div class="section fp__black" data-anchor="contacts">
+    <app-footer></app-footer>
+  </div>
 </div>
