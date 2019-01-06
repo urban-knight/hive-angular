@@ -49,10 +49,12 @@ export class MainPageComponent implements OnInit, OnDestroy {
     keyboardScrolling: true,
     onLeave: (index: number, nextIndex: number, direction: string): void => {
       const section: FpSection = this.sections[nextIndex - 1];
-      this.navbar.setColor(
-        section.color === 'dark' ? 'light' : 'dark'
+      this.navbar.setColor(section.color === 'dark' ? 'light' : 'dark');
+      window.history.replaceState(
+        {},
+        '',
+        `${window.location.pathname}#${section.dataAnchor}`
       );
-      window.history.replaceState({}, '', `${window.location.pathname}#${section.dataAnchor}`);
     }
   });
 
@@ -78,7 +80,6 @@ export class MainPageComponent implements OnInit, OnDestroy {
   }
 
   navigate(anchor: string) {
-    console.log('Parent anchor: ' + anchor);
     this.fullpageService.moveTo(anchor);
   }
 }

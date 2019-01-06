@@ -8,7 +8,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 export class NavbarComponent {
 
-  private color: string;
+  public color: string;
   private lastColor: string;
   activeLang: string;
   langs: string[];
@@ -22,7 +22,6 @@ export class NavbarComponent {
   navClick = new EventEmitter<String>();
 
   nav(event: Event, anchor: string) {
-    console.log('child anchor: ' + anchor);
     this.navClick.emit(anchor);
   }
 

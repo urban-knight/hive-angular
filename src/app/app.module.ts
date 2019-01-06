@@ -45,7 +45,7 @@ export function setupTranslateService(service: TranslateService) {
     // ...fromDirectives.directives,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'hive-web-studio'}),
     RouterModule,
     ButtonsModule,
     CarouselModule,
