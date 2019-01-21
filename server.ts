@@ -19,11 +19,11 @@ const DIST_FOLDER = join(process.cwd(), 'dist');
 
 // Enable server-side browser functionality 
 const template = readFileSync(join(process.cwd(), 'dist', 'browser', 'index.html')).toString();
-const _window : Window = createWindow(template);
-
+const _window: Window = createWindow(template);
 global['window'] = _window;
+_window['Math'] = { round: () => 0, abs: () => 0 };
 global['window'].$ = global['window'].jQuery = require("jquery");
-console.log(_window);
+require("fullpage.js/dist/jquery.fullpage.min.js");
 global['document'] = _window.document;
 // global['DOMTokenList'] = _window.DOMTokenList;
 // global['Node'] = _window.Node;
@@ -55,17 +55,17 @@ import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
 
 app.engine('html', (_, options, callback) => {
     renderModuleFactory(AppServerModuleNgFactory, {
-      // Our index.html
-      document: template,
-      url: options.req.url,
-      // DI so that we can get lazy-loading to work differently (since we need it to just instantly render it)
-      extraProviders: [
-        provideModuleMap(LAZY_MODULE_MAP)
-      ]
+        // Our index.html
+        document: template,
+        url: options.req.url,
+        // DI so that we can get lazy-loading to work differently (since we need it to just instantly render it)
+        extraProviders: [
+            provideModuleMap(LAZY_MODULE_MAP)
+        ]
     }).then(html => {
-      callback(null, html);
+        callback(null, html);
     });
-  });
+});
 
 app.set('view engine', 'html');
 app.set('views', join(DIST_FOLDER, 'browser'));
