@@ -13,7 +13,8 @@ export class MainSectionComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    const canvas = <HTMLCanvasElement> document.getElementById('canvas');
+    const canvas = <HTMLCanvasElement>document.getElementById('canvas');
+    if (!canvas.getContext) { return; }
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
