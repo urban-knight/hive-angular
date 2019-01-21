@@ -2,13 +2,13 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: {  server: './server.ts' },
-  resolve: { 
-      extensions: ['.js', '.ts'],
-      alias: {
-        'fullpage': 'fullpage.js/dist/jquery.fullpage.min.js'  // relative to node_modules
+  entry: { server: './server.ts' },
+  resolve: {
+    extensions: ['.js', '.ts'],
+    alias: {
+      'fullpage': 'fullpage.js/dist/jquery.fullpage.min.js'  // relative to node_modules
     }
-    },
+  },
   target: 'node',
   // this makes sure we include node_modules and other 3rd party libraries
   externals: [/(node_modules|main\..*\.js)/],
@@ -33,12 +33,9 @@ module.exports = {
       {}
     ),
     new webpack.ProvidePlugin({
-        jQuery: 'jquery',
-        $: 'jquery',
-        jquery: 'jquery'
-      }),
-    new webpack.ProvidePlugin({
-        fullpage: 'fullpage.js/dist/fullpage.min.js'
-      })
+      jQuery: 'jquery',
+      $: 'jquery',
+      jquery: 'jquery'
+    })
   ]
 }
